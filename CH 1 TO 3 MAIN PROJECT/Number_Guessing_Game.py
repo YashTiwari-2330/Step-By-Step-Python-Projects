@@ -1,25 +1,32 @@
 import random
+import time
 
 # COMPUTER RANDOMLY PIC A ONE NUMBER BETWEEN 1 TO 100
 
-random_number = random.randint(1 , 100)
+def gussing_game():
 
-print("🎯 Welcome To Number Guessing Game :-")
-print("I'M thinking of a number between 1 to 100 , can you guess it?")
+      print("🎯 Welcome To Number Guessing Game :-")
+      print("I'M thinking of a number between 1 to 100 , can you guess it?")
 
 
-attempt = 0
+      random.seed(85)
 
-while True:
-    guess = int(input("Enter Your Guess :-"))
-    attempt += 1
+      random_number = random.randint(1 , 100)
 
-    if guess < random_number:
-        print(f"Computer Number :- {random_number} You Choice Too Low Number! Try Again Higher Number  🔼" )
+      attempt = 0
 
-    elif guess > random_number:
-        print(f"Computer Number :- {random_number} You Choice Too High Number ! Try Again Lower Number  🔽")
+      while True:
+          guess = int(input("Enter Your Guess :-"))
+          attempt += 1
 
-    else:
-        print(f"🎉 Congratulation ! You Guessed it in {"attempts"} {attempt}")
-        break
+          if guess < random_number:
+              print(f"Computer Number :- You Choice Too Low Number! Try Again Higher Number  🔼" )
+
+          elif guess > random_number:
+              print(f"Computer Number :- You Choice Too High Number ! Try Again Lower Number  🔽")
+
+          else:
+              print(f"🎉 Congratulation ! You Guessed it in {"attempts"} {attempt}")
+              break
+
+gussing_game()
